@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLoans (HomeLoan) IncomeTax Savings Calculator</title>
+    <style>
+        /* Add a vibrant background color */
+        body {
+            background-color: #f0f8ff; /* Light sky blue */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Calculator container style */
+        .calculator-container {
+            background-color: #ffffff;
+            border: 4px solid #1e90ff; /* Bold blue border */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            position: relative;
+            padding-top: 20px; /* Reduce padding to fit logo inside */
+        }
+
+        /* FinLoans logo style - now inside the calculator border */
+        .logo {
+            display: block;
+            margin: 0 auto 10px; /* Center the logo inside the container */
+            width: 150px; /* Adjust the width for a balanced size */
+        }
+
+        /* Form labels and input fields */
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #1e90ff;
+        }
+
+        button {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1c86ee;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #1e90ff;
+        }
+
+        /* Centering the calculator */
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Wrapper to center the content -->
+    <div class="wrapper">
+        <!-- Calculator container -->
+        <div class="calculator-container">
+
+            <!-- FinLoans Logo within the border -->
+            <img src="log.png" alt="FinLoans Logo" class="logo">
+
+            <h1>FinLoans (HomeLoan) IncomeTax Savings Calculator</h1>
+
+            <label for="loanAmount">Home Loan Amount (₹):</label>
+            <input type="number" id="loanAmount" placeholder="Enter loan amount" required><br>
+
+            <label for="interestPaid">Interest Paid (₹):</label>
+            <input type="number" id="interestPaid" placeholder="Enter interest paid" required><br>
+
+            <label for="principalPaid">Principal Paid (₹):</label>
+            <input type="number" id="principalPaid" placeholder="Enter principal repaid" required><br>
+
+            <label for="taxSlab">Tax Slab:</label>
+            <select id="taxSlab">
+                <option value="0.1">10%</</option>
+                <option value="0.2">20%</</option>
+                <option value="0.3">30%</</option>
+            </select><br>
+
+            <label for="taxRegime">Choose Tax Regime:</label>
+            <select id="taxRegime">
+                <option value="old">Old Tax Regime</option>
+                <option value="new">New Tax Regime</option>
+            </select><br>
+
+            <button onclick="calculateTaxSavings()">Calculate Tax Savings</button>
+
+            <h2>Tax Savings: ₹<span id="taxSavings">0</span></h2>
+        </div>
+    </div>
+
+    <!-- Include JavaScript -->
+    <script src="finloans-tax-calculator.js"></script>
+
+</body>
+</html>
+
